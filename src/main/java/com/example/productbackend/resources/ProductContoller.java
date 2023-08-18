@@ -26,12 +26,10 @@ public class ProductContoller {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Product> getProduct(@PathVariable long id){
-        var product = this.service.getProduct(id);
-        return ResponseEntity.ok(product);
+    public ResponseEntity<Product> deleteProduct(@PathVariable long id){
+        this.service.deleteProductById(id);
+        return ResponseEntity.noContent().build();
     }
-
-
 }
 
 
